@@ -26,7 +26,7 @@ A futuristic, glassmorphic GROW YouR NEED dashboard for managing various applica
 
 ## About The Project
 
-gymix is a web-based, OS-like dashboard designed to be a central hub for a modern provider saas to educational institution, organization znd individuals. It combines stunning visuals with powerful functionality, creating an intuitive and engaging user experience.
+GROW YouR NEED is a web-based, OS-like dashboard designed to be a central hub for a modern provider saas to educational institution, organization and individuals. It combines stunning visuals with powerful functionality, creating an intuitive and engaging user experience.
 
 The entire interface is built around a **glassmorphic** design language, utilizing blurred backgrounds, vibrant gradients, and clean typography to create a sense of depth and modernity. The architecture is highly modular, allowing for easy expansion and management of different functionalities.
 
