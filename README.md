@@ -1,7 +1,7 @@
 
 # gymix Dashboard
 
-A futuristic, glassmorphic OS dashboard for managing various applications and analytics, featuring a modular interface, real-time data visualization, and powerful AI integrations powered by the Google Gemini API.
+A futuristic, glassmorphic GROW YouR NEED dashboard for managing various applications and analytics, featuring a modular interface, real-time data visualization, and powerful AI integrations powered by the local ollama ai and openai api,google gemini api,claude api.
 
 ![gymix Screenshot](https://storage.googleapis.com/aurea-6a2ba.appspot.com/public/aura-os-screenshot.png)
 
@@ -215,7 +215,7 @@ You only need a modern web browser that supports ES modules.
 
 ### API Key Setup
 
-This project relies on the Google Gemini API for its AI features.
+This project relies on the local ollama ai and openai api,google gemini api,claude api. for its AI features.
 
 1.  Obtain an API key from [Google AI Studio](https://aistudio.google.com/app/apikey).
 2.  The application is hardcoded to look for the API key in `process.env.API_KEY`. Since this is a client-side application without a Node.js backend, you'll need to make the key available in your environment. For local development, the simplest way is to replace `process.env.API_KEY` with your actual API key string in the code where `new GoogleGenAI()` is called.
