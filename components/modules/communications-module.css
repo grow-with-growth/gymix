@@ -1,0 +1,26 @@
+
+.communications-module-bordered {
+  border-width: 3px;
+  border-style: solid;
+  border-color: rgba(96, 165, 250, 0.4); /* Tailwind blue-400 @ 40% */
+  box-shadow: 0 0 15px rgba(96, 165, 250, 0.4);
+}
+
+.comms-folder-pane-bordered {
+    border-right: 1px solid rgba(96, 165, 250, 0.2);
+    box-shadow: 2px 0 8px -2px rgba(96, 165, 250, 0.2);
+}
+
+.comms-email-list-pane-bordered {
+    border-right: 1px solid rgba(96, 165, 250, 0.2);
+    box-shadow: 2px 0 8px -2px rgba(96, 165, 250, 0.2);
+}
+
+.comms-email-item-bordered {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: border-color 0.3s;
+}
+
+.comms-email-item-bordered:hover {
+    border-bottom-color: rgba(96, 165, 250, 0.4);
+}

@@ -1,0 +1,29 @@
+.marketplace-overlay-container {
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgba(168, 85, 247, 0.5); /* Tailwind purple-500 @ 50% */
+  background-color: #1e1935e0;
+}
+
+.marketplace-overlay-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  border-bottom: 1px solid rgba(96, 165, 250, 0.2);
+  flex-shrink: 0;
+}
+
+.control-btn {
+  padding: 0.5rem;
+  border-radius: 9999px;
+  color: #9ca3af; /* gray-400 */
+  transition: all 0.2s;
+}
+.control-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+.control-btn.close:hover {
+  background-color: rgba(239, 68, 68, 0.5); /* red-500 */
+}

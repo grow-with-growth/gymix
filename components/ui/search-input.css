@@ -1,0 +1,22 @@
+
+.search-input-bordered {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 9999px;
+    height: 2.25rem; /* h-9 */
+    padding-left: 2.5rem; /* pl-10 */
+    padding-right: 1rem; /* pr-4 */
+    font-size: 0.875rem; /* text-sm */
+    transition: all 0.3s;
+    width: 100%;
+    color: #FFF;
+}
+.search-input-bordered::placeholder {
+    color: #9ca3af; /* gray-400 */
+}
+
+.search-input-bordered:focus {
+    outline: none;
+    border-color: rgba(168, 85, 247, 0.6); /* purple-500 */
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+}

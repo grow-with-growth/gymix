@@ -1,0 +1,190 @@
+// Example: How to use PocketBase in your School SaaS
+// This replaces your mock backend with a real database
+
+// To use this file:
+// 1. Install PocketBase: npm install pocketbase
+// 2. Rename this file to pocketbase.ts
+// 3. Use the functions as shown in the examples below
+
+/*
+import PocketBase from 'pocketbase';
+import type { 
+  SchoolUser, 
+  CalendarEvent, 
+  Email, 
+  MarketplaceProduct 
+} from '@/types';
+
+// Initialize PocketBase
+export const pb = new PocketBase('http://localhost:8090');
+
+// Auto-refresh auth
+pb.autoCancellation = false;
+
+// Example: User Authentication
+export const auth = {
+  async login(email: string, password: string) {
+    try {
+      const authData = await pb.collection('users').authWithPassword(email, password);
+      return authData.record;
+    } catch (error) {
+      console.error('Login failed:', error);
+      throw error;
+    }
+  },
+
+  async register(email: string, password: string, name: string) {
+    try {
+      const data = {
+        email,
+        password,
+        passwordConfirm: password,
+        name,
+        role: 'Student' // default role
+      };
+      const record = await pb.collection('users').create(data);
+      return record;
+    } catch (error) {
+      console.error('Registration failed:', error);
+      throw error;
+    }
+  },
+
+  logout() {
+    pb.authStore.clear();
+  },
+
+  get user() {
+    return pb.authStore.model;
+  }
+};
+
+// Example: Calendar Events (Replaces your mock data)
+export const calendar = {
+  async getEvents(): Promise<CalendarEvent[]> {
+    try {
+      const records = await pb.collection('calendar_events').getFullList({
+        sort: '-date',
+      });
+      return records as unknown as CalendarEvent[];
+    } catch (error) {
+      console.error('Failed to fetch calendar events:', error);
+      return [];
+    }
+  },
+
+  async createEvent(event: Omit<CalendarEvent, 'id'>) {
+    try {
+      const record = await pb.collection('calendar_events').create(event);
+      return record;
+    } catch (error) {
+      console.error('Failed to create event:', error);
+      throw error;
+    }
+  },
+
+  // Real-time updates
+  subscribeToEvents(callback: (data: any) => void) {
+    pb.collection('calendar_events').subscribe('*', callback);
+  }
+};
+
+// Example: School Users
+export const users = {
+  async getByDepartment(department: string): Promise<SchoolUser[]> {
+    try {
+      const records = await pb.collection('school_users').getList(1, 50, {
+        filter: `department = "${department}"`,
+      });
+      return records.items as unknown as SchoolUser[];
+    } catch (error) {
+      console.error('Failed to fetch users:', error);
+      return [];
+    }
+  },
+
+  async search(query: string): Promise<SchoolUser[]> {
+    try {
+      const records = await pb.collection('school_users').getList(1, 20, {
+        filter: `name ~ "${query}" || email ~ "${query}"`,
+      });
+      return records.items as unknown as SchoolUser[];
+    } catch (error) {
+      console.error('Search failed:', error);
+      return [];
+    }
+  }
+};
+
+// Example: File Upload
+export const storage = {
+  async uploadFile(file: File, folder: string = 'general') {
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('folder', folder);
+
+    try {
+      const record = await pb.collection('files').create(formData);
+      return {
+        id: record.id,
+        url: pb.getFileUrl(record, record.file),
+        name: record.file
+      };
+    } catch (error) {
+      console.error('Upload failed:', error);
+      throw error;
+    }
+  }
+};
+
+// Example: Replace your API routes
+// Instead of /api/school-users/route.ts, use this directly:
+export async function fetchSchoolUsers(department: string) {
+  return users.getByDepartment(department);
+}
+
+// Example: Real-time chat
+export const chat = {
+  async sendMessage(text: string, userId: string, channelId: string) {
+    return pb.collection('messages').create({
+      text,
+      user: userId,
+      channel: channelId,
+      timestamp: new Date().toISOString()
+    });
+  },
+
+  subscribeToChannel(channelId: string, callback: (data: any) => void) {
+    pb.collection('messages').subscribe(`channel = "${channelId}"`, callback);
+  }
+};
+
+// Example: Using with your existing components
+// In your component:
+
+import { calendar } from '@/lib/pocketbase-example';
+
+export default function CalendarModule() {
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    // Fetch events
+    calendar.getEvents().then(setEvents);
+
+    // Subscribe to real-time updates
+    const unsubscribe = calendar.subscribeToEvents((e) => {
+      if (e.action === 'create') {
+        setEvents(prev => [...prev, e.record]);
+      }
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  }, []);
+
+  return (
+    // Your existing calendar UI
+  );
+}
+*/

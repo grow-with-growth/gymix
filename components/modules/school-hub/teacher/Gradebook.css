@@ -1,0 +1,86 @@
+
+.gradebook-container {
+    padding: 2rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.gradebook-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-shrink: 0;
+}
+
+.class-selector {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.class-selector label {
+    font-weight: 500;
+    color: #cbd5e1;
+}
+.class-selector select {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    color: white;
+}
+
+.table-wrapper {
+    flex-grow: 1;
+    overflow: auto;
+    border: 1px solid rgba(96, 165, 250, 0.2);
+    border-radius: 1rem;
+}
+
+.gradebook-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+.gradebook-table th, .gradebook-table td {
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.875rem;
+    white-space: nowrap;
+}
+
+.gradebook-table th {
+    background-color: rgba(255, 255, 255, 0.1);
+    font-family: 'Orbitron', sans-serif;
+    color: #cbd5e1;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.gradebook-table th:first-child, .gradebook-table td:first-child {
+    text-align: left;
+    position: sticky;
+    left: 0;
+    background-color: rgba(30, 25, 53, 0.9);
+}
+.gradebook-table th:first-child {
+    z-index: 2;
+}
+
+.gradebook-table td {
+    color: #e5e7eb;
+    border-top: 1px solid rgba(96, 165, 250, 0.15);
+}
+
+.gradebook-table tbody tr:hover {
+    background-color: rgba(168, 85, 247, 0.1);
+}
+.gradebook-table tbody tr:hover td:first-child {
+    background-color: rgba(168, 85, 247, 0.2);
+}
+

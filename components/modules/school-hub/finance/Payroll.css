@@ -1,0 +1,97 @@
+.payroll-container {
+    padding: 2rem;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.payroll-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.next-payroll-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    align-items: center;
+    gap: 2rem;
+    background: linear-gradient(90deg, rgba(168, 85, 247, 0.3) 0%, rgba(59, 130, 246, 0.3) 100%);
+    border: 1px solid rgba(168, 85, 247, 0.5);
+    border-radius: 1rem;
+    padding: 1.5rem 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.next-payroll-label {
+    font-size: 0.875rem;
+    color: #d1d5db;
+}
+.next-payroll-date, .next-payroll-amount {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+.run-payroll-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: white;
+    color: #1e1935;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+}
+.run-payroll-btn:hover {
+    background-color: #e5e7eb;
+    transform: scale(1.02);
+}
+
+
+.history-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.25rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.table-wrapper {
+    overflow: auto;
+    border: 1px solid rgba(96, 165, 250, 0.2);
+    border-radius: 1rem;
+}
+
+.payroll-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.payroll-table th, .payroll-table td {
+    padding: 1rem;
+    text-align: left;
+    font-size: 0.875rem;
+    white-space: nowrap;
+}
+
+.payroll-table th {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.payroll-table td {
+    border-top: 1px solid rgba(96, 165, 250, 0.15);
+}
+
+.view-details-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #cbd5e1;
+    transition: color 0.2s;
+}
+.view-details-btn:hover {
+    color: #22d3ee;
+}

@@ -1,0 +1,506 @@
+{
+  "collections": [
+    {
+      "name": "users",
+      "type": "auth",
+      "schema": [
+        {
+          "name": "name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "role",
+          "type": "select",
+          "required": true,
+          "options": {
+            "values": ["Student", "Teacher", "Admin"]
+          }
+        },
+        {
+          "name": "department",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "avatarUrl",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "name": "calendar_events",
+      "schema": [
+        {
+          "name": "date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "name": "title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "description",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "time",
+          "type": "text"
+        },
+        {
+          "name": "type",
+          "type": "select",
+          "required": true,
+          "options": {
+            "values": ["meeting", "exam", "holiday", "task", "reminder"]
+          }
+        },
+        {
+          "name": "user",
+          "type": "relation",
+          "required": false,
+          "options": {
+            "collectionId": "users",
+            "cascadeDelete": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "knowledge_articles",
+      "schema": [
+        {
+          "name": "title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "content",
+          "type": "editor",
+          "required": true
+        },
+        {
+          "name": "tags",
+          "type": "text",
+          "array": true
+        },
+        {
+          "name": "author",
+          "type": "relation",
+          "required": false,
+          "options": {
+            "collectionId": "users",
+            "cascadeDelete": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "emails",
+      "schema": [
+        {
+          "name": "sender",
+          "type": "relation",
+          "required": true,
+          "options": {
+            "collectionId": "users",
+            "cascadeDelete": false
+          }
+        },
+        {
+          "name": "recipients",
+          "type": "relation",
+          "required": true,
+          "array": true,
+          "options": {
+            "collectionId": "users",
+            "cascadeDelete": false
+          }
+        },
+        {
+          "name": "subject",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "body",
+          "type": "editor",
+          "required": true
+        },
+        {
+          "name": "folder",
+          "type": "select",
+          "required": true,
+          "options": {
+            "values": ["Inbox", "Sent", "Drafts", "Archive", "Spam", "Trash"]
+          }
+        },
+        {
+          "name": "unread",
+          "type": "bool",
+          "required": true,
+          "default": true
+        },
+        {
+          "name": "timestamp",
+          "type": "date",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "marketplace_products",
+      "schema": [
+        {
+          "name": "name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "category",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "price",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "imageUrl",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "stock",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "description",
+          "type": "editor"
+        }
+      ]
+    },
+    {
+      "name": "games",
+      "schema": [
+        {
+          "name": "title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "category",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "description",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "imageUrl",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "config",
+          "type": "json"
+        }
+      ]
+    },
+    {
+      "name": "media_content",
+      "schema": [
+        {
+          "name": "title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "type",
+          "type": "select",
+          "required": true,
+          "options": {
+            "values": ["Movies", "Series"]
+          }
+        },
+        {
+          "name": "imageUrl",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "contentUrl",
+          "type": "text"
+        },
+        {
+          "name": "description",
+          "type": "editor"
+        }
+      ]
+    },
+    {
+      "name": "school_hub_dashboard",
+      "schema": [
+        {
+          "name": "department",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "metrics",
+          "type": "json",
+          "required": true
+        },
+        {
+          "name": "events",
+          "type": "json",
+          "required": true
+        },
+        {
+          "name": "announcement",
+          "type": "json",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "files",
+      "schema": [
+        {
+          "name": "file",
+          "type": "file",
+          "required": true
+        },
+        {
+          "name": "folder",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "description",
+          "type": "text"
+        },
+        {
+          "name": "uploader",
+          "type": "relation",
+          "options": {
+            "collectionId": "users",
+            "cascadeDelete": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "message_threads",
+      "schema": [
+        {
+          "name": "subject",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "participants",
+          "type": "relation",
+          "required": true,
+          "array": true,
+          "options": {
+            "collectionId": "users",
+            "cascadeDelete": false
+          }
+        },
+        {
+          "name": "lastMessageTimestamp",
+          "type": "date",
+          "required": true
+        },
+        {
+          "name": "messageCount",
+          "type": "number",
+          "required": true,
+          "default": 0
+        },
+        {
+          "name": "unreadCount",
+          "type": "number",
+          "required": true,
+          "default": 0
+        }
+      ]
+    },
+    {
+      "name": "thread_messages",
+      "schema": [
+        {
+          "name": "threadId",
+          "type": "relation",
+          "required": true,
+          "options": {
+            "collectionId": "message_threads",
+            "cascadeDelete": true
+          }
+        },
+        {
+          "name": "subject",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "body",
+          "type": "editor",
+          "required": true
+        },
+        {
+          "name": "sender",
+          "type": "relation",
+          "required": true,
+          "options": {
+            "collectionId": "users",
+            "cascadeDelete": false
+          }
+        },
+        {
+          "name": "recipients",
+          "type": "relation",
+          "required": true,
+          "array": true,
+          "options": {
+            "collectionId": "users",
+            "cascadeDelete": false
+          }
+        },
+        {
+          "name": "timestamp",
+          "type": "date",
+          "required": true
+        },
+        {
+          "name": "parentId",
+          "type": "relation",
+          "options": {
+            "collectionId": "thread_messages",
+            "cascadeDelete": false
+          }
+        },
+        {
+          "name": "isRead",
+          "type": "bool",
+          "required": true,
+          "default": false
+        },
+        {
+          "name": "attachments",
+          "type": "file",
+          "array": true
+        }
+      ]
+    },
+    {
+      "name": "enrollment_statuses",
+      "schema": [
+        {
+          "name": "name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "description",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "color",
+          "type": "text",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "classes",
+      "schema": [
+        {
+          "name": "name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "description",
+          "type": "text",
+          "required": false
+        },
+        {
+          "name": "capacity",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "currentEnrollment",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "teacherId",
+          "type": "relation",
+          "required": true,
+          "options": {
+            "collectionId": "users",
+            "cascadeDelete": false
+          }
+        },
+        {
+          "name": "department",
+          "type": "text",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "enrollments",
+      "schema": [
+        {
+          "name": "studentId",
+          "type": "relation",
+          "required": true,
+          "options": {
+            "collectionId": "users",
+            "cascadeDelete": false
+          }
+        },
+        {
+          "name": "classId",
+          "type": "relation",
+          "required": true,
+          "options": {
+            "collectionId": "classes",
+            "cascadeDelete": false
+          }
+        },
+        {
+          "name": "status",
+          "type": "relation",
+          "required": true,
+          "options": {
+            "collectionId": "enrollment_statuses",
+            "cascadeDelete": false
+          }
+        },
+        {
+          "name": "enrollmentDate",
+          "type": "date",
+          "required": true
+        },
+        {
+          "name": "steps",
+          "type": "json",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

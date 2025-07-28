@@ -1,0 +1,5 @@
+.placeholder-overlay-bordered {
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgba(168, 85, 247, 0.5); /* Tailwind purple-500 @ 50% */
+}

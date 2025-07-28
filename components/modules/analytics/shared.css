@@ -1,0 +1,69 @@
+.analytics-content-pane {
+    padding: 1.5rem;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.analytics-widget {
+    background-color: rgba(255, 255, 255, 0.08); /* Lighter than main module */
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    color: #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.analytics-widget:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+.analytics-widget-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.analytics-widget-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* For tables inside widgets */
+.analytics-table-container {
+    overflow-x: auto;
+}
+
+.analytics-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.analytics-table th, .analytics-table td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-size: 0.875rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.analytics-table th {
+    color: #9ca3af;
+    font-weight: 600;
+}
+
+.analytics-table tbody tr:hover {
+    background-color: rgba(192, 132, 252, 0.1);
+}

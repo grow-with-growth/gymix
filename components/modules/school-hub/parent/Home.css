@@ -1,0 +1,196 @@
+
+.parent-dashboard {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    padding: 1.5rem;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.pd-main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    min-width: 0;
+}
+
+.pd-sidebar {
+    width: 380px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+@media (max-width: 1280px) {
+    .parent-dashboard {
+        flex-direction: column;
+    }
+    .pd-sidebar {
+        width: 100%;
+    }
+}
+
+.pd-widget {
+    background-color: rgba(30, 25, 53, 0.7);
+    border: 1px solid rgba(96, 165, 250, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 1.5rem;
+    padding: 1rem 1.5rem;
+    color: #e5e7eb;
+    backdrop-filter: blur(12px);
+}
+
+.pd-widget-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.pd-widget-header h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #fff;
+}
+.pd-widget-icon-btn, .pd-widget-more-btn {
+    color: #9ca3af;
+    background: transparent;
+    padding: 0.25rem;
+    border-radius: 9999px;
+    transition: all 0.2s;
+}
+.pd-widget-icon-btn:hover, .pd-widget-more-btn:hover {
+    color: #fff;
+    background-color: rgba(255,255,255,0.1);
+}
+
+/* Stats Row */
+.pd-stats-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+}
+.pd-stat-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: rgba(30, 25, 53, 0.7);
+    border: 1px solid rgba(96, 165, 250, 0.2);
+    border-radius: 1.5rem;
+}
+.pd-stat-title { font-size: 0.875rem; color: #9ca3af; }
+.pd-stat-value { font-family: 'Orbitron', sans-serif; font-size: 1.75rem; font-weight: bold; color: #fff; }
+.pd-stat-btn {
+    width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    background-color: rgba(168, 85, 247, 0.2); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.5);
+    transition: all .2s;
+}
+.pd-stat-btn:hover { background-color: rgba(168, 85, 247, 0.4); }
+
+/* Middle Row */
+.pd-middle-row {
+    display: flex;
+    gap: 1.5rem;
+}
+.pd-parent-profile-widget {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+}
+.pd-middle-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+@media (max-width: 900px) {
+    .pd-middle-row { flex-direction: column; }
+}
+
+
+/* Parent Profile */
+.pd-parent-profile-body { display: flex; flex-direction: column; align-items: center; text-align: center; margin: 1rem 0; flex-grow: 1; justify-content: center; }
+.pd-parent-avatar-wrapper { 
+    position: relative; 
+    margin-bottom: 1rem;
+}
+.pd-parent-avatar-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    background: conic-gradient(#a855f7, #22d3ee, #a855f7);
+    animation: spin 3s linear infinite;
+}
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+.pd-parent-avatar-wrapper img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid #1e1935;
+    position: relative;
+    z-index: 2;
+}
+.pd-parent-profile-body h4 { font-family: 'Orbitron', sans-serif; font-size: 1.25rem; font-weight: 600; color: white; margin-bottom: 0.25rem; }
+.pd-parent-profile-body p { font-size: 0.875rem; color: #9ca3af; }
+.pd-parent-socials { display: flex; justify-content: center; gap: 0.5rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem; }
+.pd-parent-socials button { padding: 0.75rem; border-radius: 50%; color: #9ca3af; transition: all 0.2s; }
+.pd-parent-socials button:hover { background-color: rgba(255,255,255,0.1); color: white; }
+
+/* Kids & Community */
+.pd-kids-list, .pd-community-list { display: flex; gap: 1rem; justify-content: space-around; }
+.pd-kid-card { text-align: center; }
+.pd-kid-card img { width: 48px; height: 48px; border-radius: 50%; margin: 0 auto 0.5rem auto; border: 2px solid #a855f7; }
+.pd-kid-name { font-weight: 500; color: white; }
+.pd-kid-class { font-size: 0.8rem; color: #9ca3af; }
+
+.pd-community-item { background-color: rgba(0,0,0,0.2); padding: 0.75rem; border-radius: 0.75rem; text-align: center; flex-grow: 1; }
+.pd-community-title { font-weight: 500; }
+.pd-community-desc { font-size: 0.8rem; color: #9ca3af; margin: 0.25rem 0 0.75rem 0; }
+.pd-community-remove-btn { background-color: rgba(239, 68, 68, 0.2); color: #f87171; border: none; font-size: 0.8rem; padding: 0.25rem 0.75rem; border-radius: 999px; cursor: pointer; }
+
+/* Exam Results */
+.pd-exams-table { width: 100%; border-collapse: collapse; }
+.pd-exams-table th, .pd-exams-table td { padding: 0.75rem 1rem; text-align: left; font-size: 0.875rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.pd-exams-table th { color: #9ca3af; font-weight: 600; }
+.pd-exams-table tbody tr:hover { background-color: rgba(168, 85, 247, 0.1); }
+.pd-exams-table tbody tr.checked { background-color: rgba(59, 130, 246, 0.1); }
+.pd-exam-status { padding: 0.2rem 0.6rem; border-radius: 999px; font-weight: 500; font-size: 0.75rem; }
+.pd-exam-status.active { color: #22d3ee; background-color: rgba(34, 211, 238, 0.1); }
+.pd-exam-status.opened { color: #facc15; background-color: rgba(250, 204, 21, 0.1); }
+.pd-exam-status.completed { color: #4ade80; background-color: rgba(74, 222, 128, 0.1); }
+.pd-exams-table input[type="checkbox"] { background: none; border: 1px solid #9ca3af; }
+
+
+/* Calendar */
+.pd-calendar-widget { background-color: #1e1935; border-color: rgba(168, 85, 247, 0.3); }
+.pd-calendar-controls { background-color: rgba(0,0,0,0.3); border-radius: 0.75rem; padding: 4px; margin-bottom: 1rem; }
+.pd-calendar-tabs { display: flex; }
+.pd-calendar-tab { flex: 1; padding: 0.5rem; border: none; background: transparent; color: #9ca3af; border-radius: 0.5rem; font-weight: 500; }
+.pd-calendar-tab.active { background-color: #a855f7; color: white; }
+.pd-calendar-nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+.pd-calendar-nav span { font-weight: 600; color: white; }
+.pd-calendar-nav-btns { display: flex; gap: 0.5rem; }
+.pd-calendar-nav-btns button { color: #9ca3af; }
+.pd-calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.5rem; text-align: center; }
+.pd-calendar-header { font-size: 0.75rem; color: #9ca3af; }
+.pd-calendar-day { padding: 0.5rem 0; color: #e5e7eb; border-radius: 50%; font-size: 0.875rem; }
+.pd-calendar-day.empty { visibility: hidden; }
+.pd-calendar-day.active { background-color: #a855f7; color: white; }
+
+/* Expenses */
+.pd-expenses-list { display: flex; flex-direction: column; gap: 1rem; }
+.pd-expense-item { display: flex; justify-content: space-between; align-items: center; }
+.pd-expense-name { font-weight: 500; }
+.pd-expense-details { font-size: 0.8rem; color: #9ca3af; }
+.pd-expense-actions { display: flex; align-items: center; gap: 0.75rem; }
+.pd-expense-status { padding: 0.2rem 0.6rem; border-radius: 999px; font-weight: 500; font-size: 0.75rem; }
+.pd-expense-status.paid { color: #4ade80; background-color: rgba(74, 222, 128, 0.1); }
+.pd-expense-status.due { color: #f87171; background-color: rgba(248, 113, 113, 0.1); }
+

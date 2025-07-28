@@ -1,0 +1,175 @@
+
+.predictive-analytics-container {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.predictive-analytics-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.controls-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background-color: rgba(0,0,0,0.2);
+    border: 1px solid rgba(96, 165, 250, 0.2);
+    border-radius: 1rem;
+    width: 100%;
+    max-width: 600px;
+    flex-shrink: 0;
+}
+@media (min-width: 768px) {
+    .controls-area {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+
+.select-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #cbd5e1;
+    font-weight: 500;
+}
+
+.form-select {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    color: white;
+    transition: all 0.3s;
+    min-width: 200px;
+}
+.form-select:focus {
+    outline: none;
+    border-color: rgba(168, 85, 247, 0.6);
+}
+
+.forecast-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    height: 48px;
+    padding: 0 1.5rem;
+    border-radius: 0.75rem;
+    background-color: #a855f7; /* purple-600 */
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.forecast-btn:hover:not(:disabled) {
+    background-color: #9333ea; /* purple-700 */
+}
+.forecast-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.forecast-btn .loader {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.output-container {
+    width: 100%;
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "chart" "summary" "risks";
+    gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+    .output-container {
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas: "chart summary" "chart risks";
+    }
+}
+
+
+.output-chart { grid-area: chart; }
+.summary { grid-area: summary; }
+.risks { grid-area: risks; }
+
+.output-chart, .output-card {
+    background-color: rgba(0,0,0,0.2);
+    border: 1px solid rgba(96, 165, 250, 0.2);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    animation: fade-in 0.5s ease-out;
+}
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+
+
+.output-title {
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.output-card p {
+    color: #d1d5db;
+    line-height: 1.6;
+}
+.output-card ul {
+    list-style-type: disc;
+    padding-left: 1.25rem;
+    color: #d1d5db;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.placeholder-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem;
+    color: #6b7280;
+    background-color: rgba(0,0,0,0.2);
+    border: 2px dashed rgba(96, 165, 250, 0.2);
+    border-radius: 1rem;
+}
+
+.error-message { color: #fca5a5; background-color: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); padding: 1rem; border-radius: 0.5rem; }
+.skeleton-loader { display: flex; flex-direction: column; gap: 0.75rem; }
+.skeleton-line { height: 1rem; background-color: rgba(255, 255, 255, 0.1); border-radius: 0.25rem; animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+.skeleton-line.h-64 { height: 16rem; }
+@keyframes pulse { 50% { opacity: .5; } }

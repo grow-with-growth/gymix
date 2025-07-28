@@ -1,0 +1,6 @@
+.placeholder-module-bordered {
+  border-width: 3px;
+  border-style: solid;
+  border-color: rgba(96, 165, 250, 0.4); /* Tailwind blue-400 @ 40% */
+  box-shadow: 0 0 15px rgba(96, 165, 250, 0.4);
+}

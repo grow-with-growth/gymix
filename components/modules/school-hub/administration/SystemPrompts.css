@@ -1,0 +1,150 @@
+
+.system-prompts-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: rgba(0,0,0,0.2);
+    border: 1px solid rgba(96, 165, 250, 0.2);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.prompts-sidebar {
+    width: 300px;
+    flex-shrink: 0;
+    background-color: rgba(255,255,255,0.05);
+    border-right: 1px solid rgba(96, 165, 250, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(96, 165, 250, 0.2);
+    color: #22d3ee;
+    flex-shrink: 0;
+}
+
+.prompts-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 0.5rem;
+}
+
+.prompt-category {
+    padding: 0.5rem 0;
+}
+.category-title {
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #9ca3af;
+    padding: 0.5rem 0.75rem;
+    letter-spacing: 0.05em;
+}
+
+.prompt-item {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    text-align: left;
+    transition: background-color 0.2s;
+    border-left: 3px solid transparent;
+}
+.prompt-item:hover {
+    background-color: rgba(255,255,255,0.05);
+}
+.prompt-item.active {
+    background-color: rgba(168, 85, 247, 0.2);
+    border-left-color: #a855f7;
+}
+
+.prompt-title {
+    font-weight: 600;
+    color: white;
+}
+.prompt-feature {
+    font-size: 0.875rem;
+    color: #9ca3af;
+}
+
+.prompt-editor-pane {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+
+.editor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.editor-actions {
+    display: flex;
+    gap: 0.75rem;
+}
+.editor-action-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: rgba(255,255,255,0.1);
+    color: #cbd5e1;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s;
+}
+.editor-action-btn:hover {
+    background-color: rgba(255,255,255,0.2);
+    color: white;
+}
+
+.save-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #a855f7;
+    color: white;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s;
+}
+.save-btn:hover {
+    background-color: #9333ea;
+}
+
+.editor-textarea {
+    flex-grow: 1;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: white;
+    transition: all 0.3s;
+    resize: none;
+}
+.editor-textarea:focus {
+    outline: none;
+    border-color: rgba(168, 85, 247, 0.6);
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+}
+
+/* Modal styles from other components */
+.modal-backdrop { position: fixed; inset: 0; background-color: rgba(0,0,0,0.7); backdrop-filter: blur(5px); display: flex; align-items: center; justify-content: center; z-index: 100; }
+.modal-content { background-color: #1e1935; padding: 2rem; border-radius: 1rem; border: 1px solid rgba(96, 165, 250, 0.4); box-shadow: 0 0 20px rgba(96, 165, 250, 0.4); position: relative; width: 90%; max-width: 500px; }
+.modal-header { font-family: 'Orbitron', sans-serif; font-size: 1.5rem; text-align: center; margin-bottom: 0.5rem; color: white; }
+.modal-close-btn { position: absolute; top: 1rem; right: 1rem; color: #9ca3af; padding: 0.5rem; border-radius: 50%; }
+.modal-close-btn:hover { background-color: rgba(255,255,255,0.1); color: white; }

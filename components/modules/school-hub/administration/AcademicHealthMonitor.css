@@ -1,0 +1,99 @@
+
+.academic-health-container {
+    padding: 2rem;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.academic-health-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.gauges-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.gauge-container {
+    position: relative;
+    text-align: center;
+}
+
+.gauge-svg {
+    width: 100%;
+    transform: rotateX(180deg);
+}
+
+.gauge-value {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+}
+
+.gauge-label {
+    margin-top: -10px;
+    font-weight: 500;
+    color: #cbd5e1;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+@media (min-width: 768px) {
+    .details-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+.details-card {
+    background-color: rgba(0,0,0,0.2);
+    border: 1px solid rgba(96, 165, 250, 0.2);
+    border-radius: 1rem;
+    padding: 1.5rem;
+}
+
+.details-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.25rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.875rem;
+}
+.detail-item:last-child {
+    border-bottom: none;
+}
+.detail-item span:first-child {
+    font-weight: 500;
+    color: #e5e7eb;
+}
+.detail-reason {
+    color: #fca5a5;
+}
+.detail-reason-green {
+    color: #86efac;
+}

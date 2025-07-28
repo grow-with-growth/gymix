@@ -1,0 +1,114 @@
+
+.gap-detector-container {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    padding: 2rem;
+}
+
+.gap-detector-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.gap-detector-main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+    .gap-detector-main {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.gap-detector-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+.form-label { font-weight: 600; color: #cbd5e1; }
+.form-input, .form-textarea {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: white;
+    transition: all 0.3s;
+}
+.form-textarea { resize: vertical; }
+.form-input:focus, .form-textarea:focus {
+    outline: none;
+    border-color: rgba(168, 85, 247, 0.6);
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+}
+
+.detect-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    height: 48px;
+    border-radius: 0.75rem;
+    background-color: #ef4444; /* red-500 */
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.detect-btn:hover:not(:disabled) {
+    background-color: #dc2626; /* red-600 */
+}
+.detect-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.detect-btn .loader {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.output-area {
+    background-color: rgba(0,0,0,0.2);
+    border: 1px solid rgba(96, 165, 250, 0.2);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    height: fit-content;
+}
+
+.output-content {
+    color: #e5e7eb;
+    white-space: pre-wrap;
+    line-height: 1.6;
+    animation: fade-in 0.5s ease-out;
+}
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+
+.error-message {
+    color: #fca5a5;
+    background-color: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.skeleton-loader { display: flex; flex-direction: column; gap: 0.75rem; }
+.skeleton-line { height: 1rem; background-color: rgba(255, 255, 255, 0.1); border-radius: 0.25rem; animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+.skeleton-line.short { width: 60%; }
+@keyframes pulse { 50% { opacity: .5; } }
